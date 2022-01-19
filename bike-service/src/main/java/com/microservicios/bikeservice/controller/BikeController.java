@@ -30,7 +30,7 @@ public class BikeController {
     public ResponseEntity<Bike> getBikeById(@PathVariable Long id) {
         Bike bike = service.getBikeById(id);
         if (bike == null)
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.noContent().build();
         return ResponseEntity.ok(bike);
     }
 

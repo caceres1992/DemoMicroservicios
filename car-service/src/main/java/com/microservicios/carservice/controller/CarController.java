@@ -29,14 +29,18 @@ public class CarController {
     public ResponseEntity<Car> getCarById(@PathVariable Long id) {
         Car car = service.getCarById(id);
         if (car == null)
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.noContent().build();
         return ResponseEntity.ok(car);
     }
 
 
     @PostMapping
+//    este es un post para carro
     public ResponseEntity<?> getUserById(@RequestBody Car car) {
         service.save(car);
+
+
+
         return ResponseEntity.ok(car);
     }
 
